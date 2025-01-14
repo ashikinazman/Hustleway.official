@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hustle.way</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: #222;
+            color: #fff;
+        }
+
+        header {
+            font-family: 'Creepster', cursive;
+            background: #111;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: 900;
+        }
+
+        header p {
+            font-family: 'Roboto';
+            font-weight: bold;
+            margin: 0;
+            font-size: 1.3em;
+        }
+
+        nav {
+            background: #333;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ccc;
+        }
+
+        main {
+            padding: 40px;
+            text-align: center;
+        }
+
+        footer {
+            background: #111;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-weight: 300;
+        }
+
+        /* Shop Section */
+        .shop-section {
+            padding: 40px;
+            background-color: #222;
+            text-align: center;
+        }
+
+        .shop-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        /* Product Cards */
+        .product-card {
+            background: #333;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border: 2px solid #444;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 4 / 5;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.5em;
+            border-radius: 50%;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Product Info */
+        .product-title {
+            font-size: 1.3em;
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        .product-price {
+            font-size: 1.2em;
+            color: #ccc;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .options label {
+            font-size: 1em;
+            margin-top: 10px;
+            display: block;
+            color: #bbb;
+        }
+
+        .options select,
+        .options input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #888;
+            border-radius: 5px;
+            background-color: #444;
+            color: #fff;
+        }
+
+        .add-to-cart {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #666;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Hustle.way</h1>
+        <p>Own. Hustle. Conquer.</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="Shop.html">Shop</a>
+        <a href="cart.html">Cart</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <main>
+        <div class="shop-section">
+            <h1 class="shop-title">Hustle.way presents to you</h1>
+            <div class="products">
+                <div class="product-card">
+                    <div class="carousel-container">
+                        <div class="carousel-images">
+                            <img src="Monochrome.jpg" alt="HustleX Jersey">
+                            <img src="Monochrome2.jpg" alt="HustleX Jersey 2">
+                        </div>
+                        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-title">HustleX Jersey</h2>
+                        <p class="product-price">RM60.00</p>
+                        <div class="options">
+                            <label for="size-shirt">Size:</label>
+                            <select id="size-shirt" name="size">
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="2XL">2XL</option>
+                            </select>
+                            <label for="design-shirt">Design:</label>
+                            <select id="design-shirt" name="design">
+                                <option value="Croptop">Crop Top</option>
+                                <option value="Standard">Standard</option>
+                            </select>
+                            <label for="color-shirt">Color:</label>
+                            <select id="color-shirt" name="color">
+                                <option value="Black">Black</option>
+                                <option value="Army">Army</option>
+                            </select>
+                            <label for="quantity-shirt">Quantity:</label>
+                            <input type="number" id="quantity-shirt" name="quantity" min="1" value="1">
+                        </div>
+                        <a href="#" class="add-to-cart" data-title="Monochrome Knitware" data-price="30.00">Add to Cart</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="carousel-container">
+                        <div class="carousel-images">
+                            <img src="Rebel.jpg" alt="Ecplise Rebel Bag">
+                            <img src="Rebel2.jpg" alt="Ecplise Rebel Bag 2">
+                        </div>
+                        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-title">Ecplise Rebel Bag</h2>
+                        <p class="product-price">RM79.00</p>
+                        <div class="options">
+                            <label for="color-bag">Color:</label>
+                            <select id="color-bag" name="color">
+                                <option value="Ruby Red">Ruby Red</option>
+                                <option value="White">White</option>
+                                <option value="Deep Blue">Deep Blue</option>
+                                <option value="Black">Black</option>
+                            </select>
+                            <label for="quantity-bag">Quantity:</label>
+                            <input type="number" id="quantity-bag" name="quantity" min="1" value="1">
+                        </div>
+                        <a href="#" class="add-to-cart" data-title="Ecplise Rebel Bag" data-price="79.00">Add to Cart</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="carousel-container">
+                        <div class="carousel-images">
+                            <img src="Flare.jpg" alt="Retro Revival Flare">
+                            <img src="Flare2.jpg" alt="Retro Revival Flare 2">
+                        </div>
+                        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-title">Retro Revival Flare</h2>
+                        <p class="product-price">RM109.00</p>
+                        <div class="options">
+                            <label for="size-flare">Size:</label>
+                            <select id="size-flare" name="size">
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="2XL">2XL</option>
+                            </select>
+                            <label for="design-flare">Design:</label>
+                            <select id="design-flare" name="design">
+                                <option value="Low rise">Low Rise</option>
+                                <option value="Highwaist">Highwaist</option>
+                                <option value="Standard">Standard</option>
+                            </select>
+                            <label for="color-flare">Color:</label>
+                            <select id="color-flare" name="color">
+                                <option value="Light Denim">Light Denim</option>
+                                <option value="Medium Denim">Medium Denim</option>
+                                <option value="Dark Denim">Dark Denim</option>
+                                <option value="Washed Denim">Washed Denim</option>
+                            </select>
+                            <label for="quantity-flare">Quantity:</label>
+                            <input type="number" id="quantity-flare" name="quantity" min="1" value="1">
+                        </div>
+                        <a href="#" class="add-to-cart" data-title="Retro Revival Flare" data-price="109.00">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Hustle.Co. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const carousels = document.querySelectorAll('.carousel-container');
+        carousels.forEach((carousel, index) => {
+            let slideIndex = 0;
+
+            const slides = carousel.querySelectorAll('.carousel-images img');
+            const prevButton = carousel.querySelector('.prev');
+            const nextButton = carousel.querySelector('.next');
+
+            function moveSlide(n) {
+                slideIndex = (slideIndex + n + slides.length) % slides.length;
+                carousel.querySelector('.carousel-images').style.transform = `translateX(-${slideIndex * 100}%)`;
+            }
+
+            prevButton.addEventListener('click', () => moveSlide(-1));
+            nextButton.addEventListener('click', () => moveSlide(1));
+        });
+
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', event => {
+                event.preventDefault();
+
+                const productCard = button.closest('.product-card');
+                const title = button.getAttribute('data-title');
+                const price = parseFloat(button.getAttribute('data-price'));
+                const sizeSelect = productCard.querySelector('select[name="size"]');
+                const size = sizeSelect ? sizeSelect.value : null;
+                const colorSelect = productCard.querySelector('select[name="color"]');
+                const color = colorSelect ? colorSelect.value : null;
+                const quantity = parseInt(productCard.querySelector('input[name="quantity"]').value, 10);
+
+                const product = { title, price, size, color, quantity };
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push(product);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${title} has been added to the cart.`);
+            });
+        });
+    </script>
+</body>
+
+</html>

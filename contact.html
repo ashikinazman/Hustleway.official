@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <title>Hustle.way</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+         body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: #222;
+            color: #fff;
+        }
+
+        header {
+            font-family: 'Creepster', cursive;
+            background: #111;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: 900;
+        }
+
+        header p {
+            font-family: 'Roboto';
+            font-weight: bold;
+            margin: 0;
+            font-size: 1.3em;
+        }
+
+        nav {
+            background: #333;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ccc;
+        }
+
+        main {
+            padding: 40px;
+            text-align: center;
+        }
+
+        main {
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        main h2 {
+            font-size: 3em;
+            color: #ccc;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+        }
+        .form-container {
+            margin-top: 30px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-container h3 {
+            font-size: 1.5em;
+            color: #212121;
+            margin-bottom: 20px;
+        }
+        .form-container label {
+            font-size: 1em;
+            color: #757575;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .form-container input, .form-container select, .form-container textarea {
+            padding: 12px;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #bdbdbd;
+            font-size: 1em;
+        }
+        .form-container textarea {
+            resize: vertical;
+            height: 150px;
+        }
+        .form-container button {
+            background-color: #616161;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        .form-container button:hover {
+            background-color: #757575;
+        }
+        .remove-product {
+            color: #9e9e9e;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+            display: block;
+            text-align: center;
+        }
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            letter-spacing: 1px;
+        }
+
+        footer p {
+            margin: 0;
+            font-weight: 300;
+        }
+        .contact-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .contact-info a {
+            color: #616161;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-info a:hover {
+            color: #9e9e9e;
+        }
+        .responseMessage {
+            font-size: 1.1em;
+            color: #616161;
+            margin-top: 20px;
+            text-align: center;
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+            header p {
+                font-size: 1.2em;
+            }
+            main h2 {
+                font-size: 2.5em;
+            }
+            .promo-section input,
+            .promo-section button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hustle.way</h1>
+        <p>Own. Hustle. Conquer.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="Shop.html">Shop</a>
+        <a href="cart.html">Cart</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <h2>We value your feedback!</h2>
+        <div class="form-container">
+            <h3>Share your thoughts with us:</h3>
+            <form id="feedbackForm">
+                <div id="productFeedbacks">
+                    <div class="product-feedback" id="productFeedback_1">
+                        <label for="productName_1">Choose Product:</label>
+                        <select id="productName_1" name="productName_1" required>
+                            <option value="Product A">HustleX Jersey</option>
+                            <option value="Product B">Eclipse Rebel Bag</option>
+                            <option value="Product C">Retro Revival Flare</option>
+                        </select>
+
+                        <label for="rating_1">Rating:</label>
+                        <select id="rating_1" name="rating_1" required>
+                            <option value="1">1 Star</option>
+                            <option value="2">2 Stars</option>
+                            <option value="3">3 Stars</option>
+                            <option value="4">4 Stars</option>
+                            <option value="5">5 Stars</option>
+                        </select>
+
+                        <label for="comments_1">Your Comments:</label>
+                        <textarea id="comments_1" name="comments_1" rows="4" required></textarea>
+
+                        <span class="remove-product" onclick="removeProductFeedback(1)">Remove Product</span>
+                    </div>
+                </div>
+
+                <button type="button" onclick="addProductFeedback()">Add Another Product</button>
+                <button type="submit">Submit Feedback</button>
+            </form>
+            <div id="responseMessage" class="responseMessage"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Hustle.way. All rights reserved.</p>
+        <div class="contact-info">
+            <p>Contact Us:</p>
+            <p>
+                <a href="mailto:hustleway@gmail.com">Email: hustleway@gmail.com</a><br>
+                <a href="https://www.instagram.com/hustleway.official" target="_blank">Instagram: @hustleway.official</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        let productCount = 1;
+
+        function addProductFeedback() {
+            productCount++;
+
+            const feedbackSection = document.createElement('div');
+            feedbackSection.classList.add('product-feedback');
+            feedbackSection.id = `productFeedback_${productCount}`;
+
+            feedbackSection.innerHTML = `
+                <label for="productName_${productCount}">Choose Product:</label>
+                <select id="productName_${productCount}" name="productName_${productCount}" required>
+                    <option value="Product A">HustleX Jersey</option>
+                    <option value="Product B">Eclipse Rebel Bag</option>
+                    <option value="Product C">Retro Revival Flare</option>
+                </select>
+
+                <label for="rating_${productCount}">Rating:</label>
+                <select id="rating_${productCount}" name="rating_${productCount}" required>
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
+                </select>
+
+                <label for="comments_${productCount}">Your Comments:</label>
+                <textarea id="comments_${productCount}" name="comments_${productCount}" rows="4" required></textarea>
+
+                <span class="remove-product" onclick="removeProductFeedback(${productCount})">Remove Product</span>
+            `;
+
+            document.getElementById('productFeedbacks').appendChild(feedbackSection);
+        }
+
+        function removeProductFeedback(productId) {
+            const productFeedback = document.getElementById(`productFeedback_${productId}`);
+            productFeedback.remove();
+        }
+
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let feedbackData = "";
+            for (let i = 1; i <= productCount; i++) {
+                let productName = document.getElementById(`productName_${i}`).value;
+                let rating = document.getElementById(`rating_${i}`).value;
+                let comments = document.getElementById(`comments_${i}`).value;
+
+                if (productName && rating && comments) {
+                    feedbackData += `Product: ${productName}, Rating: ${rating} star(s), Comments: ${comments}\n\n`;
+                }
+            }
+
+            if (feedbackData) {
+                let responseMessage = document.getElementById('responseMessage');
+                responseMessage.textContent = "Thank you for your feedback!\n\n" + feedbackData;
+
+                document.getElementById('feedbackForm').reset();
+            }
+        });
+    </script>
+</body>
+</html>
